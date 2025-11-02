@@ -90,11 +90,13 @@ public class DishServiceImpl implements DishService {
             throw new DeletionNotAllowedException(MessageConstant.DISH_BE_RELATED_BY_SETMEAL);
         }
         //删除菜品数据
-        for (Long id : ids) {
-            dishMapper.deleteById(id);
-            //删除菜品口味数据
-            dishFlavorsMapper.deleteByDishId(id);
-        }
+//        for (Long id : ids) {
+//            dishMapper.deleteById(id);
+//            //删除菜品口味数据
+//            dishFlavorsMapper.deleteByDishId(id);
+//        }
+        dishMapper.deleteByIds(ids);
+        dishFlavorsMapper.deleteByDishIds(ids);
 
 
     }

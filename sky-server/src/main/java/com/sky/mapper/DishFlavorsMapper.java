@@ -23,4 +23,11 @@ public interface DishFlavorsMapper {
      */
     @Delete("delete from dish_flavor where dish_id = #{dishid}")
     void deleteByDishId(Long dishid);
+
+    /**
+     * 根据菜品id批量删除对应的口味数据
+     *
+     * @param dishids
+     */
+    void deleteByDishIds(List<Long> dishids);
 }
